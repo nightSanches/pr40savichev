@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using pr37savichev.Data.DataBase;
 using pr37savichev.Data.Interfaces;
 using pr37savichev.Data.Mocks;
+using pr37savichev.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace pr37savichev
 {
     public class Startup
     {
+        public static List<ItemsBasket> BasketItem = new List<ItemsBasket>();
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)

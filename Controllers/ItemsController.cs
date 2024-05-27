@@ -35,6 +35,15 @@ namespace pr37savichev.Controllers
             return View(VMItems);
         }
 
+        public ActionResult Basket(int idItem = -1)
+        {
+            if (idItem != -1)
+            {
+                Startup.BasketItem.Add(new ItemsBasket(1, IAllItems.AllItems.Where(x => x.Id == idItem).First()));
+            }
+            return Json(Startup.BasketItem);
+        }
+
         [HttpGet]
         public ViewResult Add()
         {
@@ -60,5 +69,6 @@ namespace pr37savichev.Controllers
             int id = IAllItems.Add(newItems);
             return Redirect("/Items/Update?id=" + id);
         }
+
     }
 }
